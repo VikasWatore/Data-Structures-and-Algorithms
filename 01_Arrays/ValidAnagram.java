@@ -39,31 +39,26 @@ public class ValidAnagram {
         return true;
     }
 
-
-
-    //otpimize solution( TC:O(n) space:(1)(as 26 character are constant))
+    // otpimize solution( TC:O(n) space:(1)(as 26 character are constant))
 
     public static boolean isAnagramOptimize(String s, String t) {
-        
-        if(s.length()!=t.length()) return false;
 
+        if (s.length() != t.length())
+            return false;
 
-        int[] charCounts=new int[26];
+        int[] charCounts = new int[26];
 
         for (int i = 0; i < s.length(); i++) {
-            charCounts[s.charAt(i)-'a']++;
-            charCounts[t.charAt(i)-'a']--;
+            charCounts[s.charAt(i) - 'a']++;
+            charCounts[t.charAt(i) - 'a']--;
         }
 
         for (int i : charCounts) {
-            if(i!=0){
+            if (i != 0) {
                 return false;
             }
         }
         return true;
     }
-
-
-
 
 }
